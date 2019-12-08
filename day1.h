@@ -4,8 +4,8 @@
 namespace d1
 {
     void day1();
-    float sum_fuelReqs();
-    float func12();
+    int sum_fuelReqs();
+    int additionalFuel();
 }
 
 #endif // defined DAY1_H

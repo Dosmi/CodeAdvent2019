@@ -2,7 +2,7 @@ CFLAGS    = -g
 CFLAGS    += -DSOLN
 CC        = g++ -std=c++17
 SRCS      = main.cpp controller.cpp helpers.cpp
-SRCS			+= dec1.cpp
+SRCS			+= dec1.cpp dec2.cpp
 OBJS      = $(SRCS:.cpp=.o)
 PROG      = ca2019
 

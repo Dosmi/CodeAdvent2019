@@ -32,13 +32,15 @@ std::string helper::addPath(int dayNum, int taskNum)
   std::vector<std::string> tokens;
 
   std::string path = cwd + "/inputs/day" + std::to_string(dayNum);
+  int i = 1;
   for (const auto& entry : std::filesystem::directory_iterator(path))
   {
-    std::cout << entry << std::endl;
+    std::cout << i << entry << std::endl;
+    i++;
     tokens = helper::split(entry.path(), '/');
     tokens = helper::split(tokens.back(), '_');
 
-    if (tokens[0].compare(std::to_string(dayNum)) == 0)
+    if (tokens[0].compare(std::to_string(taskNum)) == 0)
     {
       std::cout << "returning the found file: \n";
       std::cout << entry.path() << std::endl;
@@ -61,7 +63,7 @@ std::ifstream helper::openFile(int dayNum, int taskNum)
   std::string fullFilePath = helper::addPath(dayNum, taskNum);
   file.open(fullFilePath);
 
-  return file; 
+  return file;
 }
 
 void helper::closeFile(int dayNum, int taskNum)
